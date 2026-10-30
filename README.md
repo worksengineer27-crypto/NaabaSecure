@@ -7,7 +7,8 @@ commande via Docker Compose.
 ## État d'avancement
 - Architecture Docker Compose en place (Caddy, PostgreSQL, Synapse, Element)
 - Configuration Synapse en cours de durcissement
-- Comptes de démonstration : à venir
+- Comptes de démonstration configuer
+- phase de test sur le web et elementx(sur téléphone) a venir
 
 ## Licence
 MIT — voir le fichier LICENSE
