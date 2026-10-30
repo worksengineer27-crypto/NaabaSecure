@@ -1,0 +1,8 @@
+192.168.11.107 {
+    tls internal
+    reverse_proxy /_matrix/* synapse:8008
+    reverse_proxy /_synapse/* synapse:8008
+    handle {
+        reverse_proxy element:80
+    }
+}

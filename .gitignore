@@ -1,0 +1,5 @@
+synapse-data/
+pgdata/
+caddy-data/
+.env
+*.log

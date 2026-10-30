@@ -1,0 +1,10 @@
+{
+  "default_server_config": {
+    "m.homeserver": {
+      "base_url": "https://192.168.11.107",
+      "server_name": "192.168.11.107"
+    }
+  },
+  "disable_custom_urls": true,
+  "disable_guests": true
+}
