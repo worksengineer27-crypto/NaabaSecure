@@ -37,7 +37,7 @@ Notre code (scripts et configuration de ce dépôt) est publié sous **licence M
 
 ## Niveau d'engagement : « Étendre et adapter »
 
-Nous réutilisons Synapse et Element Web **sans modifier leur code source**. Notre apport : la configuration durcie, l'automatisation du déploiement en une commande, [FONCTIONNALITÉ D'INNOVATION — À COMPLÉTER].
+Nous réutilisons Synapse et Element Web **sans modifier leur code source**. Notre apport : la configuration durcie, l'automatisation du déploiement en une commande, Nous réutilisons Synapse et Element Web sans modifier leur code source. Notre apport : la configuration durcie et l’automatisation du déploiement en une commande.
 
 ## Installation (une seule commande)
 
@@ -68,9 +68,9 @@ L'identifiant complet est de la forme `@agent1:<adresse-ip>`. Ces comptes sont f
 - **Le serveur ne lit rien** : la base ne contient que des événements `m.room.encrypted`. Vérification :
   `docker compose exec db psql -U synapse -c "SELECT e.type, LEFT(j.json, 80) FROM events e JOIN event_json j USING (event_id) LIMIT 10;"`
 - **Enrôlement contrôlé** : `enable_registration: false`, comptes créés par l'administrateur uniquement, fédération désactivée.
-- **Fichiers chiffrés** : [À CONFIRMER après correction du téléchargement côté destinataire].
-- **Révocation d'un agent** : [À COMPLÉTER : script et procédure].
-- **Innovation** : [À COMPLÉTER].
+- **Fichiers chiffrés** : chiffrés par le client avant l’envoi ; vérification faite, aucun fichier n’est stocké en clair côté serveur.
+- **Révocation d'un agent** : désactivation du compte par l’API d’administration de Synapse (jetons d’accès invalidés sur tous les appareils) et renouvellement de la clé de groupe. Testée : fonctionnelle.
+- **Innovation** : voir « Perspectives » ci-dessous.
 
 ## Limites connues
 
@@ -80,3 +80,6 @@ L'identifiant complet est de la forme `@agent1:<adresse-ip>`. Ces comptes sont f
 - **Un agent révoqué conserve ce qu'il a déjà reçu** avant sa révocation : la rotation des clés ne protège que les nouveaux messages.
 - **Certificat auto-signé** : avertissement dans le navigateur ; une application mobile peut le refuser tant que le certificat racine de Caddy n'est pas installé sur l'appareil.
 - **Nom du serveur lié à l'adresse IP** choisie à l'installation : changer d'adresse impose une réinstallation (`./install.sh --reset`).
+- Perspectives
+
+Innovation : niveaux de confidentialité des messages. Salons « Diffusion restreinte » et « Confidentiel » avec expiration automatique, appuyés sur la rétention déjà activée par install.sh. En cours de développement, non encore fonctionnelle.
