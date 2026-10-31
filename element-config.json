@@ -1,7 +1,7 @@
 {
   "default_server_config": {
     "m.homeserver": {
-      "base_url": "https://192.168.11.107",
+      "base_url": "https://192.168.11.117",
       "server_name": "192.168.11.107"
     }
   },

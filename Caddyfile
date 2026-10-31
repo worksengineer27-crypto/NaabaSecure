@@ -1,7 +1,18 @@
-192.168.11.107 {
+{
+    default_sni 192.168.11.117
+}
+
+192.168.11.117 {
     tls internal
-    reverse_proxy /_matrix/* synapse:8008
-    reverse_proxy /_synapse/* synapse:8008
+
+    handle /_matrix/* {
+        reverse_proxy synapse:8008
+    }
+
+    handle /_synapse/* {
+        reverse_proxy synapse:8008
+    }
+
     handle {
         reverse_proxy element:80
     }
