@@ -50,6 +50,7 @@ assert n == 1, "bloc database introuvable"
 s = re.sub(r"(?m)^trusted_key_servers:\n(?:[ \t]+.*\n)+", "trusted_key_servers: []\n", s, count=1)
 s += """
 enable_registration: false
+encryption_enabled_by_default_for_room_type: all
 federation_domain_whitelist: []
 max_upload_size: 50M
 
