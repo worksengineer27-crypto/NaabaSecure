@@ -6,6 +6,13 @@ Une messagerie instantanée (messages, groupes, fichiers) pour les agents de l'a
 
 Nous n'avons écrit **aucune cryptographie**. Tout le chiffrement vient du protocole Matrix (Olm/Megolm), tel qu'implémenté dans Element.
 
+Videos de demontraction:
+bannir.dans.un.salon.mp4
+dernier.phrase.mp4
+deux.phase.de.Communication.canal.mp4
+premier.phase.de.communication.peer.to.peer.mp4
+verifie.si.les.serveur.lit.les.message.mp4
+
  Architecture
 
 Une seule machine, quatre conteneurs Docker lancés par Docker Compose. Les navigateurs et les téléphones ne parlent qu'à Caddy.
